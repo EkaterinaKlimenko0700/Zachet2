@@ -21,7 +21,7 @@ public class ExperimentsZachet {
                 {
                     String word = line.substring(0, pos);
                     String translation = line.substring(pos+1);
-                    dict.add(new DictionaryEntry(word, translation));
+                    dict.add(new DictionaryEntry(word.toLowerCase(), translation));//привела к нижнему регистру
                 }
                 else
                 {
