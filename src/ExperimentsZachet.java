@@ -74,6 +74,9 @@ public class ExperimentsZachet {
             }
         }
 
+
+
+
         public static void main(String[] args) throws IOException {
             List<DictionaryEntry> dict = getDictionary();
             simpleQuery(dict);
