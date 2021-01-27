@@ -21,7 +21,7 @@ public class ExperimentsZachet {
                 {
                     String word = line.substring(0, pos);
                     String translation = line.substring(pos+1);
-                    dict.add(new DictionaryEntry(word, translation));
+                    dict.add(new DictionaryEntry(word.toLowerCase(), translation));//привела к нижнему регистру
                 }
                 else
                 {
@@ -39,7 +39,7 @@ public class ExperimentsZachet {
                 while(scanner.hasNext())
                 {
                     String word = scanner.next();
-                    var res = dict.stream().filter(dictionaryEntry -> dictionaryEntry.getWord()==word).collect(Collectors.toList());
+                    var res = dict.stream().filter(dictionaryEntry -> dictionaryEntry.getWord().equals(word)).collect(Collectors.toList());
                     if(res.size()>0)
                     {
                         out.println("запрос: " + word);
@@ -60,7 +60,7 @@ public class ExperimentsZachet {
                 while(scanner.hasNext())
                 {
                     String word = scanner.next();
-                    var res = dict.stream().filter(dictionaryEntry -> dictionaryEntry.getWord().indexOf(word)!=-1).collect(Collectors.toList());
+                    var res = dict.stream().filter(dictionaryEntry -> dictionaryEntry.getWord().contains(word)).collect(Collectors.toList());
                     if(res.size()>0)
                     {
                         out.println("запрос: " + word);
